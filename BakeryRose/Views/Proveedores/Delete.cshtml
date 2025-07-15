@@ -1,0 +1,41 @@
+﻿@model BakeryRose.Models.Proveedores
+
+@{
+    ViewData["Title"] = "Eliminar proveedor";
+}
+
+<h1 class="text-center mb-4" style="color:#c62828;">🗑️ Eliminar Proveedor</h1>
+
+<div class="alert alert-warning text-center">
+    <strong>¿Estás segura de que deseas eliminar este proveedor?</strong>
+</div>
+
+<div class="row justify-content-center">
+    <div class="col-md-6">
+        <div class="card shadow">
+            <div class="card-body">
+                <dl class="row">
+                    <dt class="col-sm-4">Nombre</dt>
+                    <dd class="col-sm-8">@Model.Nombre</dd>
+
+                    <dt class="col-sm-4">Empresa</dt>
+                    <dd class="col-sm-8">@Model.Empresa</dd>
+
+                    <dt class="col-sm-4">Correo</dt>
+                    <dd class="col-sm-8">@Model.Correo</dd>
+
+                    <dt class="col-sm-4">Contacto</dt>
+                    <dd class="col-sm-8">@Model.NumeroContacto</dd>
+                </dl>
+
+                <form asp-action="Delete" method="post">
+                    <input type="hidden" asp-for="Id" />
+                    <div class="d-flex justify-content-between">
+                        <a asp-action="Index" class="btn btn-secondary">⬅️ Cancelar</a>
+                        <button type="submit" class="btn btn-danger">Eliminar</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>

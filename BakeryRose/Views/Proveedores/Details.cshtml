@@ -1,0 +1,36 @@
+﻿@model BakeryRose.Models.Proveedores
+
+@{
+    ViewData["Title"] = "Detalles del proveedor";
+}
+
+<h1 class="text-center mb-4" style="color:#6a1b9a;">📄 Detalles del Proveedor</h1>
+
+<div class="row justify-content-center">
+    <div class="col-md-6">
+        <div class="card shadow-sm">
+            <div class="card-body">
+                <dl class="row">
+                    <dt class="col-sm-4">Nombre</dt>
+                    <dd class="col-sm-8">@Model.Nombre</dd>
+
+                    <dt class="col-sm-4">Empresa</dt>
+                    <dd class="col-sm-8">@Model.Empresa</dd>
+
+                    <dt class="col-sm-4">Correo</dt>
+                    <dd class="col-sm-8">@Model.Correo</dd>
+
+                    <dt class="col-sm-4">Contacto</dt>
+                    <dd class="col-sm-8">@Model.NumeroContacto</dd>
+                </dl>
+
+                <div class="d-flex justify-content-between mt-4">
+                    <a asp-action="Index" class="btn btn-secondary">⬅️ Volver</a>
+                    <a asp-action="Edit" asp-route-id="@Model.Id" class="btn btn-primary">✏️ Editar</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+

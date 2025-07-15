@@ -1,0 +1,51 @@
+﻿@model BakeryRose.Models.Proveedores
+
+@{
+    ViewData["Title"] = "Editar proveedor";
+}
+
+<h1 class="mb-4 text-center" style="color:#6a1b9a;">✏️ Editar Proveedor</h1>
+
+<div class="row justify-content-center">
+    <div class="col-md-8">
+        <form asp-action="Edit" class="shadow p-4 rounded" style="background-color: #ffffff;">
+            <input type="hidden" asp-for="Id" />
+
+            <div class="mb-3">
+                <label asp-for="Nombre" class="form-label">Nombre</label>
+                <input asp-for="Nombre" class="form-control" />
+                <span asp-validation-for="Nombre" class="text-danger"></span>
+            </div>
+
+            <div class="mb-3">
+                <label asp-for="Empresa" class="form-label">Empresa</label>
+                <input asp-for="Empresa" class="form-control" />
+                <span asp-validation-for="Empresa" class="text-danger"></span>
+            </div>
+
+            <div class="mb-3">
+                <label asp-for="Correo" class="form-label">Correo electrónico</label>
+                <input asp-for="Correo" class="form-control" />
+                <span asp-validation-for="Correo" class="text-danger"></span>
+            </div>
+
+            <div class="mb-3">
+                <label asp-for="NumeroContacto" class="form-label">Número de contacto</label>
+                <input asp-for="NumeroContacto" class="form-control" />
+                <span asp-validation-for="NumeroContacto" class="text-danger"></span>
+            </div>
+
+            <div class="d-flex justify-content-between">
+                <a asp-action="Index" class="btn btn-secondary">⬅️ Cancelar</a>
+                <button type="submit" class="btn btn-primary">💾 Guardar cambios</button>
+            </div>
+        </form>
+    </div>
+</div>
+
+@section Scripts {
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+}
+
